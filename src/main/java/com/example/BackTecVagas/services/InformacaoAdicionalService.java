@@ -21,7 +21,6 @@ import java.util.stream.Collectors;
 @Service
 public class InformacaoAdicionalService {
 
-
     @Autowired
     private InformacaoAdicionalRepository informacaoAdicionalRepository;
 
@@ -58,7 +57,7 @@ public class InformacaoAdicionalService {
 
     }
 
-    public Page<InformacaoAdicionalResponse> listarTodosInformacoesAdicionais(PageRequest pageRequest) {
+    public Page<InformacaoAdicionalResponse> listarTodasInformacoesAdicionais(PageRequest pageRequest) {
         Page<InformacaoAdicional> page = informacaoAdicionalRepository.findAll(pageRequest);
 
         List<InformacaoAdicionalResponse> list = page.getContent().stream().map(InformacaoAdicional -> mapper.map(InformacaoAdicional, InformacaoAdicionalResponse.class))

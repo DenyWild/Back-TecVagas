@@ -19,9 +19,9 @@ public class CandidatoController {
     private CandidatoService candidatoService;
 
     @PostMapping
-    public ResponseEntity<CandidatoResponse> cadastrarCandidato(CandidatoForm candidato) {
+    public ResponseEntity<CandidatoResponse> cadastrarCandidato(CandidatoForm form) {
 
-        CandidatoResponse response = candidatoService.cadastrarCandidato(candidato);
+        CandidatoResponse response = candidatoService.cadastrarCandidato(form);
 
 
         return ResponseEntity.status(HttpStatus.CREATED).body(response);

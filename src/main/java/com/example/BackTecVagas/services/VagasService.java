@@ -1,7 +1,5 @@
 package com.example.BackTecVagas.services;
 
-import com.example.BackTecVagas.dto.EmpresaForm;
-import com.example.BackTecVagas.dto.EmpresaResponse;
 import com.example.BackTecVagas.dto.VagasForm;
 import com.example.BackTecVagas.dto.VagasResponse;
 import com.example.BackTecVagas.exceptions.ResourceNotFoundException;

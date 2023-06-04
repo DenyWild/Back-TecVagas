@@ -1,11 +1,8 @@
 package com.example.BackTecVagas.services;
 
-import com.example.BackTecVagas.dto.CandidatoForm;
-import com.example.BackTecVagas.dto.CandidatoResponse;
 import com.example.BackTecVagas.dto.CursosForm;
 import com.example.BackTecVagas.dto.CursosResponse;
 import com.example.BackTecVagas.exceptions.ResourceNotFoundException;
-import com.example.BackTecVagas.models.Candidato;
 import com.example.BackTecVagas.models.Cursos;
 import com.example.BackTecVagas.repositories.CursosRepository;
 import org.modelmapper.ModelMapper;
@@ -22,7 +19,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
-public class CusosService {
+public class CursosService {
 
 
     @Autowired

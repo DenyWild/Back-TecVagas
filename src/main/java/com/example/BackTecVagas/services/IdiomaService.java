@@ -1,11 +1,8 @@
 package com.example.BackTecVagas.services;
 
-import com.example.BackTecVagas.dto.CandidatoForm;
-import com.example.BackTecVagas.dto.CandidatoResponse;
 import com.example.BackTecVagas.dto.IdiomaForm;
 import com.example.BackTecVagas.dto.IdiomaResponse;
 import com.example.BackTecVagas.exceptions.ResourceNotFoundException;
-import com.example.BackTecVagas.models.Candidato;
 import com.example.BackTecVagas.models.Idioma;
 import com.example.BackTecVagas.repositories.IdiomaRepository;
 import org.modelmapper.ModelMapper;
