@@ -1,7 +1,5 @@
 package com.example.BackTecVagas.controllers;
 
-import com.example.BackTecVagas.dto.CandidatoForm;
-import com.example.BackTecVagas.dto.CandidatoResponse;
 import com.example.BackTecVagas.dto.EmpresaForm;
 import com.example.BackTecVagas.dto.EmpresaResponse;
 import com.example.BackTecVagas.services.EmpresaService;
