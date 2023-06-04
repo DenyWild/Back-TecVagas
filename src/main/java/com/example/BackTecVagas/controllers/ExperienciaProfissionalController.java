@@ -18,7 +18,7 @@ public class ExperienciaProfissionalController {
     private ExperienciaProfissionalService experienciaProfissionalService;
 
     @PostMapping
-    public ResponseEntity<ExperienciaProfissionalResponse> cadastrarExperienciaProfissional(ExperienciaProfissionalForm form) {
+    public ResponseEntity<ExperienciaProfissionalResponse> cadastrarExperienciaProfissional(@RequestBody ExperienciaProfissionalForm form) {
 
         ExperienciaProfissionalResponse response = experienciaProfissionalService.cadastrarExperienciaProfissional(form);
 

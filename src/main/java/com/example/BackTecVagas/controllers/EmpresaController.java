@@ -19,7 +19,7 @@ public class EmpresaController {
     private EmpresaService empresaService;
 
     @PostMapping
-    public ResponseEntity<EmpresaResponse> cadastrarEmpresa(EmpresaForm candidato) {
+    public ResponseEntity<EmpresaResponse> cadastrarEmpresa(@RequestBody EmpresaForm candidato) {
 
         EmpresaResponse response = empresaService.cadastrarEmpresa(candidato);
 

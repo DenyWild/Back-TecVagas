@@ -18,7 +18,7 @@ public class CursosController {
     private CursosService cursosService;
 
     @PostMapping
-    public ResponseEntity<CursosResponse> cadastrarCurso(CursosForm form) {
+    public ResponseEntity<CursosResponse> cadastrarCurso(@RequestBody CursosForm form) {
 
         CursosResponse response = cursosService.cadastrarCurso(form);
 

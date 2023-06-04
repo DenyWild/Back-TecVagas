@@ -18,7 +18,7 @@ public class InformacaoAdicionalController {
     private InformacaoAdicionalService informacaoAdicionalService;
 
     @PostMapping
-    public ResponseEntity<InformacaoAdicionalResponse> cadastrarInformacaoAdicional(InformacaoAdicionalForm form) {
+    public ResponseEntity<InformacaoAdicionalResponse> cadastrarInformacaoAdicional(@RequestBody InformacaoAdicionalForm form) {
 
         InformacaoAdicionalResponse response = informacaoAdicionalService.cadastrarInformacaoAdicional(form);
 

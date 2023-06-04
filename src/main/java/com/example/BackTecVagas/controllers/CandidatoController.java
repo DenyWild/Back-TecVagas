@@ -19,7 +19,7 @@ public class CandidatoController {
     private CandidatoService candidatoService;
 
     @PostMapping
-    public ResponseEntity<CandidatoResponse> cadastrarCandidato(CandidatoForm form) {
+    public ResponseEntity<CandidatoResponse> cadastrarCandidato(@RequestBody CandidatoForm form) {
 
         CandidatoResponse response = candidatoService.cadastrarCandidato(form);
 

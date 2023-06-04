@@ -18,7 +18,7 @@ public class FormacaoAcademicaController {
     private FormacaoAcademicaService formacaoAcademicaService;
 
     @PostMapping
-    public ResponseEntity<FormacaoAcademicaResponse> cadastrarFormacaoAcademica(FormacaoAcademicaForm form) {
+    public ResponseEntity<FormacaoAcademicaResponse> cadastrarFormacaoAcademica(@RequestBody FormacaoAcademicaForm form) {
 
         FormacaoAcademicaResponse response = formacaoAcademicaService.cadastrarFormmacaoAcademica(form);
 

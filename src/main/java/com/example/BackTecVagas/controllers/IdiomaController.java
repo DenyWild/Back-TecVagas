@@ -18,7 +18,7 @@ public class IdiomaController {
     private IdiomaService idiomaService;
 
     @PostMapping
-    public ResponseEntity<IdiomaResponse> cadastrarCandidato(IdiomaForm form) {
+    public ResponseEntity<IdiomaResponse> cadastrarCandidato(@RequestBody IdiomaForm form) {
 
         IdiomaResponse response = idiomaService.cadastrarIdioma(form);
 

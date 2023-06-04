@@ -19,7 +19,7 @@ public class VagasController {
     private VagasService vagasService;
 
     @PostMapping
-    public ResponseEntity<VagasResponse> cadastrarVaga(VagasForm form) {
+    public ResponseEntity<VagasResponse> cadastrarVaga(@RequestBody VagasForm form) {
 
         VagasResponse response = vagasService.cadastrarVaga(form);
 

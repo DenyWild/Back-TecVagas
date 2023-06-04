@@ -1,21 +1,21 @@
 package com.example.BackTecVagas.models;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.Date;
 
 @Data
-@Entity
+@Document
 @AllArgsConstructor
 @NoArgsConstructor
 public class Cursos {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String nomeInstituicao;
@@ -26,8 +26,6 @@ public class Cursos {
 
     private int duracaoCurso;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "curriculo_id")
     private Curriculo curriculo;
 
 }

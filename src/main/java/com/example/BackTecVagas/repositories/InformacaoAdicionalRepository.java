@@ -1,8 +1,7 @@
 package com.example.BackTecVagas.repositories;
 
-import com.example.BackTecVagas.models.Curriculo;
 import com.example.BackTecVagas.models.InformacaoAdicional;
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.mongodb.repository.MongoRepository;
 
-public interface InformacaoAdicionalRepository extends JpaRepository<InformacaoAdicional, Long> {
+public interface InformacaoAdicionalRepository extends MongoRepository<InformacaoAdicional, Long> {
 }
