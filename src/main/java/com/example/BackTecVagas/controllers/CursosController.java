@@ -3,6 +3,7 @@ package com.example.BackTecVagas.controllers;
 import com.example.BackTecVagas.dto.CursosForm;
 import com.example.BackTecVagas.dto.CursosResponse;
 import com.example.BackTecVagas.services.CursosService;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -18,6 +19,7 @@ public class CursosController {
     private CursosService cursosService;
 
     @PostMapping
+    @Transactional
     public ResponseEntity<CursosResponse> cadastrarCurso(CursosForm form) {
 
         CursosResponse response = cursosService.cadastrarCurso(form);
@@ -30,6 +32,7 @@ public class CursosController {
 
 
     @PutMapping(path = "/{id}")
+    @Transactional
     public ResponseEntity<CursosResponse> atualizarCurso(@PathVariable Long id, @RequestBody CursosForm form) {
 
         CursosResponse response = cursosService.atualizarCurso(id, form);
@@ -62,6 +65,7 @@ public class CursosController {
     }
 
     @DeleteMapping(path = "/{id}")
+    @Transactional
     public ResponseEntity<?> deletarCurso(@PathVariable Long id) {
 
         cursosService.deletarCurso(id);

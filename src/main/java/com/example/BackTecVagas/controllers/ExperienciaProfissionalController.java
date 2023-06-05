@@ -3,6 +3,7 @@ package com.example.BackTecVagas.controllers;
 import com.example.BackTecVagas.dto.ExperienciaProfissionalForm;
 import com.example.BackTecVagas.dto.ExperienciaProfissionalResponse;
 import com.example.BackTecVagas.services.ExperienciaProfissionalService;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -18,6 +19,7 @@ public class ExperienciaProfissionalController {
     private ExperienciaProfissionalService experienciaProfissionalService;
 
     @PostMapping
+    @Transactional
     public ResponseEntity<ExperienciaProfissionalResponse> cadastrarExperienciaProfissional(ExperienciaProfissionalForm form) {
 
         ExperienciaProfissionalResponse response = experienciaProfissionalService.cadastrarExperienciaProfissional(form);
@@ -30,6 +32,7 @@ public class ExperienciaProfissionalController {
 
 
     @PutMapping(path = "/{id}")
+    @Transactional
     public ResponseEntity<ExperienciaProfissionalResponse> atualizarExperienciaProfissional(@PathVariable Long id, @RequestBody ExperienciaProfissionalForm form) {
 
         ExperienciaProfissionalResponse response = experienciaProfissionalService.atualizarExperienciaProfissional(id, form);
@@ -62,6 +65,7 @@ public class ExperienciaProfissionalController {
     }
 
     @DeleteMapping(path = "/{id}")
+    @Transactional
     public ResponseEntity<?> deletarExperienciaProfissional(@PathVariable Long id) {
 
         experienciaProfissionalService.deletarExperienciaProfissional(id);

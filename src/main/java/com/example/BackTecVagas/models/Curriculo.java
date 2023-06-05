@@ -11,6 +11,7 @@ import java.util.List;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
+@Table(name = "curriculo")
 public class Curriculo {
 
     @Id

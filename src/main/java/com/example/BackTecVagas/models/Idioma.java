@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
+@Table(name = "idioma")
 public class Idioma {
 
     @Id

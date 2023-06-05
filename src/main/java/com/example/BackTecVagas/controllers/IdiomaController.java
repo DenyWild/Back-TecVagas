@@ -3,6 +3,7 @@ package com.example.BackTecVagas.controllers;
 import com.example.BackTecVagas.dto.IdiomaForm;
 import com.example.BackTecVagas.dto.IdiomaResponse;
 import com.example.BackTecVagas.services.IdiomaService;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -18,6 +19,7 @@ public class IdiomaController {
     private IdiomaService idiomaService;
 
     @PostMapping
+    @Transactional
     public ResponseEntity<IdiomaResponse> cadastrarCandidato(IdiomaForm form) {
 
         IdiomaResponse response = idiomaService.cadastrarIdioma(form);
@@ -30,6 +32,7 @@ public class IdiomaController {
 
 
     @PutMapping(path = "/{id}")
+    @Transactional
     public ResponseEntity<IdiomaResponse> atualizarIdioma(@PathVariable Long id, @RequestBody IdiomaForm form) {
 
         IdiomaResponse response = idiomaService.atualizarIdioma(id, form);
@@ -62,6 +65,7 @@ public class IdiomaController {
     }
 
     @DeleteMapping(path = "/{id}")
+    @Transactional
     public ResponseEntity<?> deletarIdioma(@PathVariable Long id) {
 
         idiomaService.deletarIdioma(id);

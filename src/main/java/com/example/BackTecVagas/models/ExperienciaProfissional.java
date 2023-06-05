@@ -12,6 +12,7 @@ import java.util.Date;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
+@Table(name = "exp-profissional")
 public class ExperienciaProfissional {
 
     @Id

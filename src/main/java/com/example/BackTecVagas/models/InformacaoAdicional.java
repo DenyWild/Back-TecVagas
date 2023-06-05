@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
+@Table(name = "inf-adicional")
 public class InformacaoAdicional {
 
     @Id

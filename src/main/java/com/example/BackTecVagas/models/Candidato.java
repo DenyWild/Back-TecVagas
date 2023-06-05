@@ -4,12 +4,15 @@ import com.example.BackTecVagas.models.enums.Regiao;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 @Data
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
+@EqualsAndHashCode(callSuper = false)
+@Table(name = "candidato")
 public class Candidato extends Usuario {
 
     @Id

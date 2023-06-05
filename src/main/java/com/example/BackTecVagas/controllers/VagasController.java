@@ -3,6 +3,7 @@ package com.example.BackTecVagas.controllers;
 import com.example.BackTecVagas.dto.VagasForm;
 import com.example.BackTecVagas.dto.VagasResponse;
 import com.example.BackTecVagas.services.VagasService;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -19,6 +20,7 @@ public class VagasController {
     private VagasService vagasService;
 
     @PostMapping
+    @Transactional
     public ResponseEntity<VagasResponse> cadastrarVaga(VagasForm form) {
 
         VagasResponse response = vagasService.cadastrarVaga(form);
@@ -28,7 +30,8 @@ public class VagasController {
 
     }
 
-    @PutMapping(path = "/{id}")
+    @PostMapping(path = "/{id}")
+    @Transactional
     public ResponseEntity<VagasResponse> cadastrarVagaComEmpresa(@PathVariable Long id, String nomeEmpresa) {
 
         VagasResponse response = vagasService.cadastrarVagaComEmpresa(id, nomeEmpresa);
@@ -38,6 +41,7 @@ public class VagasController {
     }
 
     @PutMapping(path = "/{id}")
+    @Transactional
     public ResponseEntity<VagasResponse> atualizarVaga(@PathVariable Long id, @RequestBody VagasForm form) {
 
         VagasResponse response = vagasService.atualizarVaga(id, form);
@@ -70,6 +74,7 @@ public class VagasController {
     }
 
     @DeleteMapping(path = "/{id}")
+    @Transactional
     public ResponseEntity<?> deletarVaga(@PathVariable Long id) {
 
         vagasService.deletarVaga(id);
