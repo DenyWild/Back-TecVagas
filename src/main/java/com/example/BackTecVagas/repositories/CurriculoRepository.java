@@ -1,7 +1,9 @@
 package com.example.BackTecVagas.repositories;
 
 import com.example.BackTecVagas.models.Curriculo;
-import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-public interface CurriculoRepository extends MongoRepository<Curriculo, Long> {
+@Repository
+public interface CurriculoRepository extends JpaRepository<Curriculo, Long> {
 }
