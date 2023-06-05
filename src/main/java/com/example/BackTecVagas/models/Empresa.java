@@ -1,15 +1,16 @@
 package com.example.BackTecVagas.models;
 
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.List;
 
 @Data
-@Entity
+@Document
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper = false)
@@ -17,14 +18,12 @@ import java.util.List;
 public class Empresa extends Usuario {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String nomeEmpresa;
 
     private String cnpj;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "empresa")
     private List<Vagas> vagas;
 
 }
