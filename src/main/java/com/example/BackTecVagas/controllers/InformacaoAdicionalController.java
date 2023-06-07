@@ -3,7 +3,6 @@ package com.example.BackTecVagas.controllers;
 import com.example.BackTecVagas.dto.InformacaoAdicionalForm;
 import com.example.BackTecVagas.dto.InformacaoAdicionalResponse;
 import com.example.BackTecVagas.services.InformacaoAdicionalService;
-import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -19,8 +18,7 @@ public class InformacaoAdicionalController {
     private InformacaoAdicionalService informacaoAdicionalService;
 
     @PostMapping
-    @Transactional
-    public ResponseEntity<InformacaoAdicionalResponse> cadastrarInformacaoAdicional(InformacaoAdicionalForm form) {
+    public ResponseEntity<InformacaoAdicionalResponse> cadastrarInformacaoAdicional(@RequestBody InformacaoAdicionalForm form) {
 
         InformacaoAdicionalResponse response = informacaoAdicionalService.cadastrarInformacaoAdicional(form);
 
@@ -32,7 +30,6 @@ public class InformacaoAdicionalController {
 
 
     @PutMapping(path = "/{id}")
-    @Transactional
     public ResponseEntity<InformacaoAdicionalResponse> atualizarInformacaoAdicional(@PathVariable Long id, @RequestBody InformacaoAdicionalForm form) {
 
         InformacaoAdicionalResponse response = informacaoAdicionalService.atualizarInformacaoAdicional(id, form);
@@ -65,7 +62,6 @@ public class InformacaoAdicionalController {
     }
 
     @DeleteMapping(path = "/{id}")
-    @Transactional
     public ResponseEntity<?> deletarInformacaoAdicional(@PathVariable Long id) {
 
         informacaoAdicionalService.deletarInformacaoAdicional(id);

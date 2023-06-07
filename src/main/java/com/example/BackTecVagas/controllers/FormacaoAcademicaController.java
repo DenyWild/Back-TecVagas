@@ -3,7 +3,6 @@ package com.example.BackTecVagas.controllers;
 import com.example.BackTecVagas.dto.FormacaoAcademicaForm;
 import com.example.BackTecVagas.dto.FormacaoAcademicaResponse;
 import com.example.BackTecVagas.services.FormacaoAcademicaService;
-import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -19,8 +18,7 @@ public class FormacaoAcademicaController {
     private FormacaoAcademicaService formacaoAcademicaService;
 
     @PostMapping
-    @Transactional
-    public ResponseEntity<FormacaoAcademicaResponse> cadastrarFormacaoAcademica(FormacaoAcademicaForm form) {
+    public ResponseEntity<FormacaoAcademicaResponse> cadastrarFormacaoAcademica(@RequestBody FormacaoAcademicaForm form) {
 
         FormacaoAcademicaResponse response = formacaoAcademicaService.cadastrarFormmacaoAcademica(form);
 
@@ -32,7 +30,6 @@ public class FormacaoAcademicaController {
 
 
     @PutMapping(path = "/{id}")
-    @Transactional
     public ResponseEntity<FormacaoAcademicaResponse> atualizarFormacaoAcademica(@PathVariable Long id, @RequestBody FormacaoAcademicaForm form) {
 
         FormacaoAcademicaResponse response = formacaoAcademicaService.atualizarFormmacaoAcademica(id, form);
@@ -65,7 +62,6 @@ public class FormacaoAcademicaController {
     }
 
     @DeleteMapping(path = "/{id}")
-    @Transactional
     public ResponseEntity<?> deletarFormacaoAcademica(@PathVariable Long id) {
 
         formacaoAcademicaService.deletarFormmacaoAcademica(id);

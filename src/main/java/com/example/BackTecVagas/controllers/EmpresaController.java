@@ -3,7 +3,6 @@ package com.example.BackTecVagas.controllers;
 import com.example.BackTecVagas.dto.EmpresaForm;
 import com.example.BackTecVagas.dto.EmpresaResponse;
 import com.example.BackTecVagas.services.EmpresaService;
-import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -20,8 +19,7 @@ public class EmpresaController {
     private EmpresaService empresaService;
 
     @PostMapping
-    @Transactional
-    public ResponseEntity<EmpresaResponse> cadastrarEmpresa(EmpresaForm candidato) {
+    public ResponseEntity<EmpresaResponse> cadastrarEmpresa(@RequestBody EmpresaForm candidato) {
 
         EmpresaResponse response = empresaService.cadastrarEmpresa(candidato);
 
@@ -31,7 +29,6 @@ public class EmpresaController {
     }
 
     @PutMapping(path = "/{id}")
-    @Transactional
     public ResponseEntity<EmpresaResponse> atualizarEmpresa(@PathVariable Long id, @RequestBody EmpresaForm form) {
 
         EmpresaResponse response = empresaService.atualizarEmpresa(id, form);
@@ -64,7 +61,6 @@ public class EmpresaController {
     }
 
     @DeleteMapping(path = "/{id}")
-    @Transactional
     public ResponseEntity<?> deletarEmpresa(@PathVariable Long id) {
 
         empresaService.deletarEmpresa(id);
