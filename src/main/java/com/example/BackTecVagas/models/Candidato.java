@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper = false)
 @Table(name = "candidato")
-public class Candidato extends Usuario {
+public class Candidato {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

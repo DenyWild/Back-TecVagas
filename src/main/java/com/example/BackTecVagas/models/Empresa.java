@@ -14,7 +14,7 @@ import java.util.List;
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper = false)
 @Table(name = "empresa")
-public class Empresa extends Usuario {
+public class Empresa {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
