@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class EmpresaResponse {
 
-    private Long id;
+    private String nome; //estava id
     private String nomeEmpresa;
     private String cnpj;
     private String email;

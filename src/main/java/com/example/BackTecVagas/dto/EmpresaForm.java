@@ -12,6 +12,8 @@ import lombok.NoArgsConstructor;
 public class EmpresaForm {
 
     @NotEmpty(message = "Campo nome não pode estar vazio")
+    private String nome;
+    @NotEmpty(message = "Campo nome não pode estar vazio")
     @Size(min = 2, max = 32, message = "O campo nome deve ter entre 2 e 32 caracteres no maximo")
     private String nomeEmpresa;
     @NotEmpty(message = "Campo cnpj não pode estar vazio")
