@@ -1,6 +1,5 @@
 package com.example.BackTecVagas.dto;
 
-import com.example.BackTecVagas.models.enums.Regiao;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import lombok.AllArgsConstructor;
@@ -19,7 +18,6 @@ public class CandidatoResponse {
     private String telefone;
     private String cargoDesejado;
     private double pretensaoSalarial;
-    @Enumerated(EnumType.STRING)
-    private Regiao regiao;
+    private String estado;
 
 }

@@ -1,6 +1,5 @@
 package com.example.BackTecVagas.models;
 
-import com.example.BackTecVagas.models.enums.Regiao;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -25,7 +24,6 @@ public class Candidato extends Usuario {
 
     private double pretensaoSalarial;
 
-    @Enumerated(EnumType.STRING)
-    private Regiao regiao;
+    private String estado;
 
 }
